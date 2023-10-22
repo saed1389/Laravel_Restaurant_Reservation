@@ -26,7 +26,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/categories', [FrontendCategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories-index', [FrontendCategoryController::class, 'index'])->name('categories-index');
 Route::get('/categories/{category}', [FrontendCategoryController::class, 'show'])->name('categories.show');
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
 Route::get('/reservation/step-one', [FrontendReservationController::class, 'stepOne'])->name('reservation.step.one');
