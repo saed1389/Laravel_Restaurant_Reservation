@@ -18,8 +18,11 @@
                         <div class="sm:col-span-6">
                             <label for="name" class="block text-sm font-medium text-gray-700"> Name </label>
                             <div class="mt-1">
-                                <input type="text" id="name" name="name" value="{{ $menu->name }}" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal sm:text-sm sm:leading-5" />
+                                <input type="text" id="name" name="name" value="{{ $menu->name }}" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
+                            @error('name')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="sm:col-span-6 pt-5">
                             <label for="image" class="block text-sm font-medium text-gray-700"> Image </label>
@@ -27,22 +30,31 @@
                                 <img src="{{ Storage::url($menu->image) }}" class="w-32 h-32" alt="">
                             </div>
                             <div class="mt-1">
-                                <input type="file" id="image" name="image" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal sm:text-sm sm:leading-5" />
+                                <input type="file" id="image" name="image" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal sm:text-sm sm:leading-5 @error('image') border-red-400 @enderror" />
                             </div>
+                            @error('image')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="sm:col-span-6 pt-5">
                             <label for="price" class="block text-sm font-medium text-gray-700"> Price </label>
                             <div class="mt-1">
-                                <input type="number" id="price" name="price" min="0.00" max="10000.00" value="{{ $menu->price }}" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal sm:text-sm sm:leading-5" />
+                                <input type="number" id="price" name="price" min="0.00" max="10000.00" value="{{ $menu->price }}" class="block w-full transition duration-150 ease-in-out appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal sm:text-sm sm:leading-5 @error('price') border-red-400 @enderror" />
                             </div>
+                            @error('price')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="sm:col-span-6 pt-5">
                             <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                             <div class="mt-1">
-                                <textarea id="description" rows="3" name="description"  class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm ">
+                                <textarea id="description" rows="3" name="description"  class="shadow-sm focus:ring-indigo-500 appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:border-indigo-500 block w-full sm:text-sm @error('description') border-red-400 @enderror">
                                     {{ $menu->description }}
                                 </textarea>
                             </div>
+                            @error('description')
+                            <div class="text-sm text-red-400">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="sm:col-span-6 pt-5">
                             <label for="categories" class="block text-sm font-medium text-gray-700">Categories</label>
