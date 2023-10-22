@@ -36,7 +36,7 @@ class ReservationController extends Controller
         /*dd($request);*/
         Reservation::create($request->validated());
 
-        return to_route('admin.reservation.index');
+        return to_route('admin.reservation.index')->with('success', 'Reservation created successfully');
     }
 
     /**
