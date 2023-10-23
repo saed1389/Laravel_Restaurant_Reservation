@@ -29,7 +29,10 @@ Route::get('/categories-index', [FrontendCategoryController::class, 'index'])->n
 Route::get('/categories/{category}', [FrontendCategoryController::class, 'show'])->name('categories.show');
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
 Route::get('/reservation/step-one', [FrontendReservationController::class, 'stepOne'])->name('reservation.step.one');
+Route::post('/reservation/step-one', [FrontendReservationController::class, 'storeStepOne'])->name('reservation.store.step.one');
 Route::get('/reservation/step-two', [FrontendReservationController::class, 'stepTwo'])->name('reservation.step.two');
+Route::post('/reservation/step-two', [FrontendReservationController::class, 'storeStepTwo'])->name('reservation.store.step.two');
+Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
